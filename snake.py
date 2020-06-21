@@ -56,3 +56,6 @@ class Snake:
         """return the current head of the snake"""
 
         return self.body[0]
+
+    def size(self):
+        return len(self.body)

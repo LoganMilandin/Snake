@@ -85,8 +85,10 @@ class Board(Canvas):
     def move_snake(self):
         """makes the snake move a single time, also checking for game over"""
 
-        # global TIME_BETWEEN_MOVES
-        # TIME_BETWEEN_MOVES += 5
+        if self.snake.size() == GAME_GRID_DIMENSIONS * GAME_GRID_DIMENSIONS:
+            self.create_text(GAME_WIDTH / 2, GAME_WIDTH / 2, fill="white", font="Roboto 30 bold",
+                             text="You Win!")
+            return
         self.changedDirectionThisTurnAlready = False
         (row, col) = self.snake.get_head().get_row_col()
         (dx, dy) = self.current_direction.get_deltas()
@@ -100,7 +102,7 @@ class Board(Canvas):
             self.after(TIME_BETWEEN_MOVES, self.move_snake)
         else:
             self.create_text(GAME_WIDTH / 2, GAME_WIDTH / 2, fill="white", font="Roboto 30 bold",
-                             text="Game Over! ")
+                             text="Game Over!")
 
     def check_for_collision(self, new_coords):
         """checks if the cell that the snake is about to move into will result in a game over
@@ -197,7 +199,7 @@ class Board(Canvas):
         global GAME_GRID_DIMENSIONS, GAME_WIDTH, SQUARE_WIDTH, TIME_BETWEEN_MOVES, INVERSE_PROP_CONSTANT
         try:
             new_dimens = int(event.widget.get())
-            if new_dimens < 2 or new_dimens > 10000:
+            if new_dimens < 2 or new_dimens > 100:
                 raise ValueError('A very specific bad thing happened.')
             GAME_GRID_DIMENSIONS = int(event.widget.get())
             SQUARE_WIDTH = GAME_WIDTH / GAME_GRID_DIMENSIONS
