@@ -4,13 +4,10 @@ Usage:
     python3 main.py
 """
 
-
 from tkinter import *
-from PIL.ImageTk import PhotoImage
-from PIL import Image
-
 from board import *
 from bot_board import BotBoard
+
 
 using_bot = False
 

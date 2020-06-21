@@ -1,12 +1,11 @@
-import tkinter
-import PIL.ImageTk as ImageTk
+from tkinter import *
+from PIL.ImageTk import PhotoImage
 from PIL import Image
-from cell import *
-from snake import *
-from direction import *
+from cell import Cell
+from snake import Snake
+from direction import Direction
 
 import random as rand
-from datetime import datetime
 
 
 MENU_WIDTH = 150
@@ -23,7 +22,7 @@ MENU_COLOR = "#888888"
 BORDER_COLOR = "#222222"
 
 
-class Board(tkinter.Canvas):
+class Board(Canvas):
     """Represents the canvas with the blue background appearing on the left of the screen.
 
     Args:
@@ -39,8 +38,8 @@ class Board(tkinter.Canvas):
             **kwargs (arg list) other optional arguments for canvas
         """
 
-        tkinter.Canvas.__init__(self, parent, kwargs)
-        self.pack(side=tkinter.BOTTOM)
+        Canvas.__init__(self, parent, kwargs)
+        self.pack(side=BOTTOM)
 
         self.changedDirectionThisTurnAlready = False
         self.initialize_directions()
@@ -137,7 +136,7 @@ class Board(tkinter.Canvas):
         img = Image.open("food.png")
         img = img.resize(
             (int(SQUARE_WIDTH), int(SQUARE_WIDTH)), Image.ANTIALIAS)
-        self.tk_img = ImageTk.PhotoImage(img)
+        self.tk_img = PhotoImage(img)
 
     def change_direction(self, event):
         """changes the direction of the snake so that next time it moves, it makes a turn
