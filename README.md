@@ -19,7 +19,7 @@ The player uses arrow keys to control the snake and eat apples
 
 <img src="https://drive.google.com/uc?export=view&id=1ddPkVR-PV_roiMu2bKYEqInlUV36tv6q" alt="home page" width="500" height="500">
 
-There is also a rudimentary bot that can be enabled, which will always fill up the board completely if it's an even size (note that it's impossible to fill an odd-size board; see traveling salesman problem)
+There is also a rudimentary bot that can be enabled, which will always fill up the board completely if it's an even size, albeit slowly (note that it's impossible to fill an odd-size board; see traveling salesman problem)
 
 <img src="https://drive.google.com/uc?export=view&id=1GIWNU7tKzo48Jz2n4E8rM5IxixsDeZnM" alt="home page" width="500" height="500">
 
