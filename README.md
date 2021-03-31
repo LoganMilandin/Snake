@@ -4,11 +4,11 @@ This is an implementation of the classic Snake game in Python. I wrote it to fam
 
 ## Usage
 
-1. Download the repository
+1. Download the repository, nagivate to it
 2. Install tkinter if your version of Python doesn't come with it
 4. ```bash
    python snake_main.py
-   ``` from the repository
+   ```
 5. To let the bot play instead, change using_bot in snake_main from False to True
 
 ## Features
